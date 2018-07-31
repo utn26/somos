@@ -1,0 +1,74 @@
+.botonSuperior{
+	margin-left: 16px;
+	margin-bottom: 12px;
+
+	padding-top:8px; 
+	padding-bottom: 8px;
+}
+.tituloFiltrar{
+	margin-left: 10px;
+	margin-right: 15px;
+}
+.botonAccion{
+  margin-left: 16px;
+  margin-right: : 16px;
+}
+
+/*.form.ng-submitted input.ng-invalid{
+    border-color:red;
+    box-shadow: 0 0 10px red;
+    margin-left: 12px;
+}
+
+.form input.ng-valid.ng-touched{
+    border-color:green;
+    box-shadow: 0 0 10px green;
+     margin-left: 12px;
+}*/
+
+.form-group input.ng-invalid.ng-touched {
+     border-color:red;
+    box-shadow: 0 0 10px red;
+    margin-left: 12px;
+    }
+.form-group.ng-submited input.ng-invalid{
+     border-color:red;
+    box-shadow: 0 0 10px red;
+    margin-left: 12px;
+    }
+.form-group input.ng-valid.ng-touched {
+     border-color:green;
+    box-shadow: 0 0 10px green;
+    margin-left: 12px;
+    }
+
+.form-group input.ng-valid{
+    border-color:green;
+    box-shadow: 0 0 10px green;
+    margin-left: 12px;
+    }
+
+.messages {
+      color: #FA787E;
+      margin-left: 14px;
+    }
+.id{
+  width: 10%;
+
+}
+.nombre{
+  width: 40%;
+
+}
+.edad{
+  width: 10%;
+
+}
+.sueldo{
+  width: 20%;
+
+}
+.accion{
+  width: 20%;
+
+}

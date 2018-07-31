@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ABM EMPLEADOS</title>
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  	<link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+	
+    <script src="controls/myCtrl.js"></script>
+
+    <script src="directivasPropias/modales.js"></script>
+	
+	<script src="resources/dirPagination.js"></script>
+
+	<script src="service/conectionServerService.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+	<div class="container">
+
+	<h2>Empleados</h2><br>
+	<hr>
+	<br>
+	<div class="row">
+			
+			<button type="button" class="btn btn-info btn botonSuperior" data-toggle="modal" data-target="#myModal" class="row">
+		    	Nuevo <i class="fa fa-user"></i>
+		  	</button>
+	</div>
+		
+		<table class="table table-condensed table-hover table-striped " >
+		<thead class=" thread thead-dark" >
+		    <tr>
+		      <th scope="col" class="id">Id</th>
+		      <th scope="col" class="nombre">Nombre</th>
+		      <th scope="col" class="edad">Edad</th>
+		      <th scope="col" class="sueldo">Sueldo</th>
+		      <th scope="col" class="accion">Accion</th>
+		    </tr>
+		</thead>
+		<tr>
+		      <th scope="col">
+		      	<p><input class="form-control" type="js" ng-model="busqueda.id"></p>
+			  </th>
+			  <th scope="col">
+		      	<p><input class="form-control" type="js" ng-model="busqueda.nombre"></p>
+			  </th>
+			  <th scope="col">
+		      	<p><input class="form-control" type="js" ng-model="busqueda.edad"></p>
+			  </th>
+			  <th scope="col">
+		      	<p><input class="form-control" type="js" ng-model="busqueda.sueldo"></p>
+			  </th>
+		      
+		    </tr>
+		  <tr dir-paginate="x in empleados| filter:{id:busqueda.id,nombre:busqueda.nombre,edad:busqueda.edad,sueldo: busqueda.sueldo }| itemsPerPage: 6">
+		    
+		    <td>{{x.id}}</td>
+		    <td class="nombre">{{x.nombre}}</td>
+		    <td>{{x.edad}}</td>
+		    <td>${{x.sueldo}}</td>
+		    <td data-name="del">
+	          <div <div class="text-center" "row">
+	             <button  class='btn row-remove btn-default' data-toggle="modal" data-target="#myModal3" ng-click="setEmpleado(x.id, x.nombre, x.edad, x.sueldo)"><i class="fa fa-pencil"></i></button>
+	             <button  class='btn row-remove btn-danger' ng-click="eliminar(x.id)"><i class="fa fa-trash-o"></i></button>
+	          </div> 
+	        </td>	
+		  </tr>
+		
+		</table>
+		<div class="text-center">
+		<dir-pagination-controls
+                max-size="5"
+                direction-links="true"
+                boundary-links="true" >
+		</dir-pagination-controls>
+		</div>
+		</nav>
+		<br>
+		<hr>
+	</div> 
+<!----------------------------------MODALES--------------------------------------------------------->
+	<modals></modals>
+
+</body>
+</html>
